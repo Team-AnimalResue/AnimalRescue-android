@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_rescue"
+        android:icon="@drawable/ic_rescue"
+        android:title="Rescue"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/navigation_adopt"
+        android:icon="@drawable/ic_adopt"
+        android:title="Adopt"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/navigation_donate"
+        android:icon="@drawable/ic_donate"
+        android:title="Donate"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/ic_user"
+        android:title="User"
+        app:showAsAction="always|withText" />
+
+</menu>

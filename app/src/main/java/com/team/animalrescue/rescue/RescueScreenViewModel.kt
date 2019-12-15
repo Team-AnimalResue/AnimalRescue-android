@@ -1,7 +1,6 @@
 package com.team.animalrescue.rescue
 
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.ViewModel
 
 class RescueScreenViewModel : ViewModel() {

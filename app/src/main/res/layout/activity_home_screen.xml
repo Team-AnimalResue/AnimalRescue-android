@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.team.animalrescue.homescreen.HomeScreenActivity">
 
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        app:titleEnabled="false">
+         <include
+            layout="@layout/primary_toolbar">
+        </include>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.team.animalrescue.common.views.NonSwipeableViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/appBarLayout"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        app:itemIconTint="@color/selector"
+        app:itemTextColor="@color/selector"
+        app:menu="@menu/navigation" />
+<!--
     <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
         android:id="@+id/top_navigation_constraint"
         android:layout_width="match_parent"
@@ -44,8 +81,8 @@
             app:bt_title="User" />
 
 
-        <!-- Add more child items here - max upto 5 -->
+        &lt;!&ndash; Add more child items here - max upto 5 &ndash;&gt;
 
-    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
