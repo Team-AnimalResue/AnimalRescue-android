@@ -2,9 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.team.animalrescue.homescreen.HomeScreenActivity">
 
 
@@ -12,12 +13,12 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
         android:background="@color/white"
         app:titleEnabled="false">
          <include
+             android:id="@+id/primary_toolbar"
             layout="@layout/primary_toolbar">
         </include>
     </com.google.android.material.appbar.AppBarLayout>
@@ -26,11 +27,8 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintBottom_toTopOf="@+id/appBarLayout"
+        android:layout_below="@id/appBarLayout"
+        android:layout_above="@id/navigation"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,7 +37,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:elevation="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        android:layout_alignParentBottom="true"
         app:itemIconTint="@color/selector"
         app:itemTextColor="@color/selector"
         app:menu="@menu/navigation" />
@@ -84,5 +82,5 @@
         &lt;!&ndash; Add more child items here - max upto 5 &ndash;&gt;
 
     </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>-->
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
 </layout>

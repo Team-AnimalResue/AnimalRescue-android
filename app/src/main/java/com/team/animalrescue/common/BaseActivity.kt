@@ -11,11 +11,10 @@ import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
 import com.team.animalrescue.R
 
-open class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base)
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
     }
 
     fun hideKeyboard() {

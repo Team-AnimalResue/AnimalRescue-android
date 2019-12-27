@@ -5,5 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="tabselected">#EF5350</color>
+    <color name="blue">#2196F3</color>
 
 </resources>

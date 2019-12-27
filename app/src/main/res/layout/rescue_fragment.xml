@@ -1,10 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.team.animalrescue.common.views.TextViewLatoBold
+            android:id="@+id/tv_resue_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Post a Rescue"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            style="@style/TextViewTitle"
+            />
+        <com.team.animalrescue.common.views.TextViewLatoRegular
+            android:id="@+id/tv_resue_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Be a hero, by rescuing animal in need"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tv_resue_title"
+            android:paddingBottom="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addPhotosRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_resue_hint">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.team.animalrescue.common.views.TextViewLatoRegular
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_change_loc"
+            />
+        <com.team.animalrescue.common.views.TextViewLatoBold
+            android:id="@+id/tv_change_loc"
+            android:text="Change Location"
+            app:layout_constraintBottom_toTopOf="@id/mapLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/blue"
+            android:layout_height="wrap_content"
+            />
+
+        <include
+            android:id="@+id/mapLayout"
+            layout="@layout/map_view"
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
