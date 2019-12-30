@@ -19,6 +19,7 @@
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".common.BaseActivity">
     </activity>
 

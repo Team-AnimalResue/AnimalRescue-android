@@ -5,7 +5,6 @@ import android.content.Context
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
-import android.widget.Toast
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -69,6 +68,7 @@ class MapViewHolder(
     override fun onMyLocationChange(location: Location) {
         val loc = LatLng(location.latitude, location.longitude)
         if (map != null) {
+            map?.clear()
             marker = map?.addMarker(
                 MarkerOptions()
                     .position(loc)
@@ -100,7 +100,7 @@ class MapViewHolder(
                 if (addresses.isNotEmpty()) {
                     var address: String =
                         addresses[0].featureName.toString() + ", " + addresses[0].getLocality() + ", " + addresses[0].adminArea + ", " + addresses[0].countryName
-                    listener.onAddressUpdate(address)
+                    listener.onAddressUpdate(address, location)
                     //Toast.makeText(context, address, Toast.LENGTH_LONG).show()
                 }
             }
@@ -118,10 +118,11 @@ class MapViewHolder(
                     .position(loc)
                     .title(mapViewState.title)
             )
+            getAddress(loc)
             map?.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, mapZoomLevel))
         }
     }
     interface Listener {
-        fun onAddressUpdate(address: String)
+        fun onAddressUpdate(address: String, latLng: LatLng)
     }
 }

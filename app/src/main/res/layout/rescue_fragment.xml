@@ -36,6 +36,8 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        
+
         <com.team.animalrescue.common.views.TextViewLatoRegular
             android:id="@+id/tv_address"
             android:layout_width="match_parent"
